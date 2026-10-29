@@ -11,12 +11,12 @@ A fair 2026 check would freeze `forest_sqrt__min_samples_leaf_100` and threshold
 
 ## Truthful use / no-use record
 
-Tool and use, or “No AI used for this lab”:
+Tool and use, or “No AI used for this lab”: Claude Code (Anthropic). We used it as an assistant to set up the environment, run the notebook, explore the frozen dev predictions for the error patterns, and draft the written answers, the memo and this file from the notebook outputs. We gave the instructions, chose what to keep, and reviewed the final text.
 
-If used, one actual suggestion (quote or faithful summary):
-What we accepted/rejected:
-Exact check performed and repository evidence:
-One limitation relevant to this work:
+If used, one actual suggestion (quote or faithful summary): After the first commit it warned that Git on Windows (`core.autocrlf=true`) was changing the line endings of `data/learning_v2.csv`. The stored file hash became `33b8bb3b…` and not the expected `6782cfca…`, so `load_learning` would fail on a fresh clone. It suggested adding `.gitattributes` with `data/*.csv -text` and re-adding the file.
+What we accepted/rejected: Accepted. Without it, the instructor's clone would stop at the hash check.
+Exact check performed and repository evidence: We cloned the repo again with `core.autocrlf=true`, ran `sha256sum data/learning_v2.csv` (got `6782cfca…`, equal to `DATA_HASH` in `lab03_support_v3.py`), and ran `load_learning('.')` in the clone (63,165 train / 9,451 dev rows). The fix is in `.gitattributes` and the commit "Store learning_v2.csv with its original bytes so the hash check passes".
+One limitation relevant to this work: The tool can describe what the numbers show, but it cannot confirm racing causes. For example, the HARD tyre and fresh-tyre explanations in section 5 stay hypotheses. We also checked that every number in the memo matches `comparison_table.md`, because written text can drift from the outputs.
 
 Do not invent an error or interaction. No minimum number of prompts is required.
 
