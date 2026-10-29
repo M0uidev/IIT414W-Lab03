@@ -1,5 +1,7 @@
 # Lab 3 start here
 
+**Authors:** Matías Mouat and María José López
+
 Due Thu 29 October 2026, 12:30 Santiago. Same pairs as Lab 2. 100 points, 6% NP.
 Read the short route in `IIT414W_Lab03_Brief_v3.md`; criterion components are in `RUBRIC_Lab03_v3.md`.
 
