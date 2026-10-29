@@ -51,6 +51,23 @@ and explicitly reports INCOMPLETE. Empty error-export headers in the starter are
 The execution flag confirms only that the candidate ran. Your reasoning and documents must also be complete.
 The Markdown table is generated: do not copy or edit its numbers manually.
 
+## What we actually used
+
+- Windows 11, Python 3.11.9 (the 3.12 tested version was not installed; 3.11 runs the same pinned packages).
+- numpy 2.0.2, pandas 2.3.1, scikit-learn 1.8.0, scipy 1.17.1, joblib 1.4.2 (installed from `requirements_lab03_v3.txt`).
+- Steps, from the repository folder:
+
+```text
+py -3.11 -m venv .venv
+.venv\Scripts\python -m pip install -r requirements_lab03_v3.txt
+.venv\Scripts\python -m ipykernel install --user --name iit414w-lab03-v3 --display-name "IIT414W Lab03 v3"
+```
+
+- Open `Lab03_ModelComparison_Student_v3.ipynb` with the "IIT414W Lab03 v3" kernel and use Restart + Run All. A full run takes a few minutes.
+- Headless alternative: `.venv\Scripts\pip install nbconvert` and then
+  `.venv\Scripts\python -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.kernel_name=iit414w-lab03-v3 Lab03_ModelComparison_Student_v3.ipynb`.
+- All paths are relative to the repository folder. The candidate is `forest_sqrt`, `min_samples_leaf` 30 → 100.
+
 ## Final submission
 
 Canvas text entry: both names, accessible GitHub repository URL, final commit ID and notebook filename.
